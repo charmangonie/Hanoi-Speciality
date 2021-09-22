@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In and Sign Up</title>
+  <link rel="stylesheet" href="login.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <div class="form" id="sign-in-form">
+          <h2 class="title">Sign in</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" id="signin_username" required />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" id="signin_password" required />
+          </div>
+          <a href="" id="submit_login">
+            <input type="submit" value="Login" class="btn solid" onclick='submit_signin();' />
+          </a>
+          
+          <p class="social-text">Or Sign in with social platforms</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="form" id="sign-up-form">
+          <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" id="username" required onkeyup='check_username();'>
+          </div>
+          <div class="notice" id="username_notice"></div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" id="email" required>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" id="password" onchange="checkLengPassword()" required
+              onkeyup='check_password();'>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Repeat Password" id="password_repeat" required
+              onkeyup='check_password();'>
+            <div class="notice" id="wrong_repeat"></div>
+          </div>
+
+          <input type="submit" value="Sign up" class="btn solid" onclick='submit_signup();'>
+
+          <p class="social-text">Or Sign up with social platforms</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>New here?</h3>
+          <p> Nulla aut suscipit molestiae omnis, exercitationem enim tenetur reprehenderit voluptatem nihil
+            praesentium, repudiandae tempora delectus architecto! Nesciunt assumenda excepturi eaque quod odio.</p>
+          <button class="btn transparent" id="sign-up-btn">Sign up</button>
+        </div>
+
+        <img src="photos/eat2.svg" class="image" alt=" eat photo login">
+      </div>
+
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>One of us?</h3>
+          <p> Nulla aut suscipit molestiae omnis, exercitationem enim tenetur reprehenderit voluptatem nihil
+            praesentium, repudiandae tempora delectus architecto! Nesciunt assumenda excepturi eaque quod odio.</p>
+          <button class="btn transparent" id="sign-in-btn">Sign in</button>
+        </div>
+
+        <img src="photos/eat1.svg" id="img_signup" class="image" alt="eat photo sign up">
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="login.js"></script>
+
+</html>
