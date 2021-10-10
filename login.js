@@ -40,7 +40,7 @@ var submit_signup = function(){
     let name = document.getElementById('username').value
     let email = document.getElementById('email').value
     let psw = document.getElementById('password').value
-    
+    let liked = []
 
     if(psw!=="" && name!=="" && email !=""){
             if(check_username()===false && check_password()===true){
@@ -48,10 +48,12 @@ var submit_signup = function(){
             this.name = name;
             this.email = email;
             this.psw = psw;
+            this.liked = liked;
         }
-            const user = new User(name,email, psw);
+            const user = new User(name,email, psw, liked);
             alluser.push(user)
             localStorage.setItem("alluser", JSON.stringify(alluser));
+            alert("Now you can sign in!")
         } else {
             alert("Please check your sign up information!");
         }
@@ -85,24 +87,40 @@ const check_username = () => {
 const checkLengPassword = () => {
     let psw = document.getElementById('password').value;
     if(psw.length>=6 && psw.length<=20){
-        console.log("password hợp lệ");
+        console.log("Good password");
     } else {
-        console.log("password chưa hợp lệ");
+        alert("Your password must 6-20 characters");
     }
 }
 
 var signin = localStorage.getItem("alluser");
 var signin_data = JSON.parse(signin);
-const submit_signin = () => {
+let button_login  = document.getElementById("login")
+button_login.addEventListener("click", function(event)
+{
+    event.preventDefault();
     var name = document.getElementById('signin_username').value
     var psw = document.getElementById('signin_password').value
+    var login_check 
     for (var i=0;i<signin_data.length;i++){
         if(name === signin_data[i].name&& psw=== signin_data[i].psw){
             alert("You are logged in!")
+            login_check = true
+            localStorage.setItem("login_check", JSON.stringify(login_check))
             window.location.href = "homepage.html";
+            //hiển thị là đã login//
         }else{
             alert("Your password or username is incorrect")
         }
     }
-  
 }
+)
+
+//nếu đã login thì k vào được trang sign in sign up
+login_check = localStorage.getItem("login_check");
+ login_check = JSON.parse(login_check)
+ console.log(login_check)
+if (login_check== true){
+    window.location.href = "homepage.html";
+}else{}
+
