@@ -40,7 +40,7 @@ var submit_signup = function(){
     let name = document.getElementById('username').value
     let email = document.getElementById('email').value
     let psw = document.getElementById('password').value
-    let liked = []
+    let liked = {}
 
     if(psw!=="" && name!=="" && email !=""){
             if(check_username()===false && check_password()===true){

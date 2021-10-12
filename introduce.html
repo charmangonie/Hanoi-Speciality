@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduce</title>
+</head>
+<body>
+    <h1>Name</h1>
+    <img src="photos/add_favorite.svg" alt="">
+    <a href="google.com"></a>
+    <button id="like_btn">Like</button>
+    <button id="closebutton">remove</button>
+</body>
+<script >
+    var like_btn = document.getElementById("like_btn")
+    all_liked = localStorage.getItem('alluser')
+    all_liked = JSON.parse(all_liked)
+    console.log(all_liked);
+    let liked = all_liked.liked
+    console.log(liked);
+    like_btn.addEventListener('click', () =>{
+
+    })
+</script>
+</html>

@@ -15,3 +15,25 @@ function myFunction() {
     header.classList.remove("sticky");
   }
 }
+//check xem đã login chưa
+login_check = localStorage.getItem("login_check");
+ login_check = JSON.parse(login_check)
+ console.log(login_check)
+if (login_check== true){
+    window.location.href = "homepage.html";
+}else{}
+
+//đổi sang sign out
+var signin_btn = document.getElementById("signin_btn")
+signin_btn.innerHTML="HI"
+function signout(){
+  signin_btn.addEventListener('click', () =>{
+    if (login_check== null){
+      window.location.href = "login.html";
+    }else{
+      signin_btn.innerHTML="HI"
+      
+      console.log("you are signed out");
+    }
+  })
+}

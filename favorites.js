@@ -36,7 +36,7 @@ idHeader.innerHTML = headerHTML;
  console.log(login_check)
  const empty = document.querySelector(".empty_page")
  const favourite_page = document.querySelector(".favorites")
-if (login_check== true){
+if (login_check== null){
   empty.classList.remove("empty_page")
   empty.classList.add("empty_page::before")
   favourite_page.classList.add("favorites")
@@ -62,13 +62,7 @@ const dish_data=[
 ]
 
 let allfav;
-//Check local storage
-if (localStorage.getItem("favourites") !==null){
-  allfav = localStorage.getItem("favourites"); //gán giá trị ở trong local storage cho biến allfav
-  allfav = JSON.parse(allfav)//chuyển đổi từ JSON về dữ liệu ban đầu
-} else {
-  allfav = []
-}
+
 let fav_dishes = document.getElementById("fav_dishes")
 let dish_card=''
 for (content of dish_data){
@@ -88,17 +82,3 @@ for (content of dish_data){
 }
 fav_dishes.innerHTML=dish_card
 
-//bấm yêu thích
-function getFav (img, name, link){
-  allfav.push(img, name, link)
-  localStorage.setItem("favourites", JSON.stringify(allfav))
-
-  readFav()
-}
-
-function readFav(){
-  let dish_card='';
-  for (let i =0; i<allfav.length; i++){
-    dish_card
-  }
-}
